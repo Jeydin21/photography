@@ -19,7 +19,7 @@ footer:
 # Tag is the actual exif tag, icon is a fontawesome icon. Use JSON notation without line breaks
 exif: '[{"tag": "Model", "icon": "camera-retro"}, {"tag": "FNumber", "icon": "dot-circle-o"}, {"tag": "ExposureTime", "icon": "clock-o"}, {"tag": "ISOSpeedRatings", "icon": "info-circle"}]'
 social_urls:
-  twitter: "https://www.twitter.com/Jeydin21"
+  # twitter: "https://www.twitter.com/Jeydin21"
   instagram: "https://www.instagram.com/Jeydin21"
   linkedin: "https://in.linkedin.com/in/jeydinpham"
   github: "https://www.github.com/Jeydin21"
