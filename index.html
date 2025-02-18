@@ -112,38 +112,4 @@ layout: default
             </div>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const images = document.querySelectorAll("img[data-name]");
-            images.forEach(image => {
-                image.addEventListener("load", function () {
-                    EXIF.getData(image, function () {
-                        const exifData = EXIF.getAllTags(this);
-                        if (exifData.DateTimeOriginal) {
-                            exifData.DateTimeOriginal = formatExifDate(exifData.DateTimeOriginal);
-                        }
-                        displayExifData(image, exifData);
-                    });
-                });
-            });
-
-            function formatExifDate(exifDate) {
-                const [date, time] = exifDate.split(" ");
-                const [year, month, day] = date.split(":");
-                return `${month}-${day}-${year}`;
-            }
-
-            function displayExifData(image, exifData) {
-                const exifContainer = document.createElement("div");
-                exifContainer.className = "exif-data";
-                for (const [key, value] of Object.entries(exifData)) {
-                    const exifElement = document.createElement("p");
-                    exifElement.innerHTML = `<strong>${key}:</strong> ${value}`;
-                    exifContainer.appendChild(exifElement);
-                }
-                image.closest("article").appendChild(exifContainer);
-            }
-        });
-    </script>
 </div>
